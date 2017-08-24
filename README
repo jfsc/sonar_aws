@@ -1,6 +1,8 @@
 # Author: fish
 # email: jfsc@cin.fupe.br
 # Details: running sonar inside container
+# FYI: before change anything here, pls, visit http://docs.ansible.com/ansible/latest/playbooks_best_practices.html#directory-layout
+
 # running
 
 ansible-playbook -i staging site.yml 
