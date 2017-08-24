@@ -1,0 +1,6 @@
+# Author: fish
+# email: jfsc@cin.fupe.br
+# Details: running sonar inside container
+# running
+
+ansible-playbook -i staging site.yml 

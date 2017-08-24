@@ -1,0 +1,11 @@
+---
+- name: Create a sonarqube container
+  docker_container:
+    name: sonar
+    image: sonarqube
+    restart_policy: always
+    volumes:
+     - /home/jfsc
+    ports:
+     - "9000:9000"
+     - "9092:9092"
