@@ -1,9 +1,11 @@
 ---
 - name: Install Sonar at AWS
   hosts: ephemeral_pipeline 
-  remote_user: jfsc
+  remote_user: default
   become: true
+  gather_facts: False
 
   roles:
     - common
+    - python
     - sonarqube

@@ -1,0 +1,22 @@
+---
+- name: Install python-pip
+  yum:
+    name: python-pip
+    state: present
+
+- name: Check pip version
+  shell: /usr/local/bin/pip -V
+  register: pip_version
+  ignore_errors: true
+
+- name: Upgrade pip
+  pip:
+    name: pip
+    extra_args: --upgrade
+  when: pip_version.stdout.find('pip 9.0') == -1
+
+- name: Install docker-py module
+  pip:
+   name: docker-py
+   state: present
+   executable: /usr/local/bin/pip

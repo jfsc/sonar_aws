@@ -5,7 +5,7 @@
     image: sonarqube
     restart_policy: always
     volumes:
-     - /home/jfsc
+     - /efs/dc/rec/shr/app/sonar/prd
     ports:
      - "9000:9000"
      - "9092:9092"
