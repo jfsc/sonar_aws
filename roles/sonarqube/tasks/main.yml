@@ -5,8 +5,8 @@
     image: sonarqube
     restart_policy: always
     volumes:
-     - /efs/dc/rec/shr/app/sonar/prd/data:/opt/sonarqube/data rw
-     - /efs/dc/rec/shr/app/sonar/prd/conf:/opt/sonarqube/conf rw
+     - /efs/dc/rec/shr/app/sonar/prd/data:/opt/sonarqube/data
+     - /efs/dc/rec/shr/app/sonar/prd/conf:/opt/sonarqube/conf
     ports:
      - "9000:9000"
      - "9092:9092"
