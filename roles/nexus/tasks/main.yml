@@ -1,0 +1,10 @@
+---
+- name: Create a nexus container
+  docker_container:
+    name: nexus
+    image: sonatype/nexus3
+    restart_policy: always
+    volumes:
+     - /efs/dc/rec/shr/app/sonar/prd/nexus:/nexus-data
+    ports:
+     - "8081:8081"

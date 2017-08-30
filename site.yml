@@ -1,11 +1,25 @@
 ---
-- name: Install Sonar at AWS
-  hosts: ephemeral_pipeline 
+- name: Preparing machines
+  hosts: all 
   remote_user: default
-  become: true
+  #become: true
   gather_facts: False
-
   roles:
     - common
     - python
+
+- name: Install Sonar at AWS
+  hosts: ephemeral_sonar
+  remote_user: default
+  become: true
+  gather_facts: False
+  roles:
     - sonarqube
+
+- name: Install Nexus at AWS
+  hosts: ephemeral_nexus
+  remote_user: default
+  become: true
+  gather_facts: False
+  roles:
+    - nexus
